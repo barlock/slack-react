@@ -1,6 +1,6 @@
 {
   "name": "slack-react",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Slack message builder in React",
   "main": "dist/index.js",
   "scripts": {
@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-preset-e": "^1.6.1",
+    "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1"
   }
 }

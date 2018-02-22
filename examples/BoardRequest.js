@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { render, components} from "../";
+import { render, components} from "../lib";
 const { Message, Attachment, Button, User } = components;
 
 const BoardRequest = ({ command, train }) => {
