@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { render, components} from "../lib";
-const { Message, Attachment, Button, User } = components;
+const { Message, Attachment, Button, User, Field } = components;
 
 const BoardRequest = ({ command, train }) => {
     const { place, time, passengers } = train;
@@ -12,6 +12,8 @@ const BoardRequest = ({ command, train }) => {
                 Chew choo! <User id={command.user_id}/> started a train to {place} at {time}.
                 { passengers.length > 0 ? passengers
                     .map(passenger => <User key={passenger.id} id={passenger.id}/> ) : null} Will you join?
+
+                <Field title="Time" short>{time}</Field>
 
                 <Button name="board">Board the Train</Button>
             </Attachment>

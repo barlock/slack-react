@@ -1,6 +1,6 @@
 {
   "name": "slack-react",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Slack message builder in React",
   "main": "dist/index.js",
   "scripts": {
