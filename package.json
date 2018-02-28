@@ -1,6 +1,6 @@
 {
   "name": "slack-react",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "Slack message builder in React",
   "main": "dist/index.js",
   "scripts": {
@@ -18,6 +18,7 @@
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "util.promisify": "^1.0.0",
     "xml2js": "^0.4.19"
   },
   "devDependencies": {
