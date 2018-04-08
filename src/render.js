@@ -1,0 +1,35 @@
+import ReactDOMServer from 'react-dom/server';
+import promisify from 'util.promisify';
+import { parseString } from 'xml2js';
+
+const parseXML = promisify(parseString);
+
+function ensureArray (json, field) {
+  if (json[field] && !(json[field] instanceof Array)) {
+    json[field] = [json[field]];
+  }
+}
+
+export default async (element) => {
+  const xml = ReactDOMServer.renderToStaticMarkup(element);
+  const json = await parseXML(xml, {
+    explicitArray: false,
+    trim: true,
+    explicitRoot: false,
+    emptyTag: ''
+  });
+
+  if (json.attachments) {
+    ensureArray(json, 'attachments');
+
+    json.attachments = json.attachments
+      .map((attachment) => {
+        ensureArray(attachment, 'actions');
+        ensureArray(attachment, 'fields');
+        ensureArray(attachment, 'mrkdwn_in');
+        return attachment;
+      });
+  }
+
+  return json;
+};

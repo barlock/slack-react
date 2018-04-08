@@ -8,7 +8,7 @@ const Field = ({ title, short, children }) => {
       <value>{children}</value>
       {short ? <short>true</short> : null}
     </fields>
-  )
+  );
 };
 
 Field.propTypes = {
